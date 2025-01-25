@@ -6,3 +6,5 @@ student={
 print(student["country"])
 student.pop('movie')
 print(student)
+school=("code int","qwerty","wasfd")
+print(school)
