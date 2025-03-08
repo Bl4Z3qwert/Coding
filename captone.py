@@ -20,7 +20,7 @@ def start_game():
             elif int(guess) == random_number:
                 print('Congarts!,you got it!')
                 attemtps=+1
-                attempts_list.append(attemtps)
+                attempts_list.append(attemtps+1)
                 print('it toke you{}attempts'.format(attemtps))
         
                 play_again = input('Would you like to retry')   
