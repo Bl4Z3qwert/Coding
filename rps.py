@@ -18,5 +18,11 @@ paper=pygame.transform.scale(paper(100,100))
 scissors=pygame.transform.scale(scissors(100,100))
 
 player_choices = {
-    'rock':
+    'rock':(500,500)
+}
+player_choices={
+    'paper':(500,500)
+}
+player_choices={
+    'scissors':(500,500)
 }
