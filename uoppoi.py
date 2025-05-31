@@ -5,7 +5,7 @@ class student:
         self.age=age
         
     def details(self):
-        print(f'my name is{self.name} im {self.age} im in grade{self.grade} ')
+        print(f'my name is {self.name} im {self.age} im in grade {self.grade} ')
 obj = student('ken', 13)
 obj2 = student('der', 12) 
 obj.details()
