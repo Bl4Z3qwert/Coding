@@ -27,51 +27,71 @@
 # c.setmaxprice(15000)
 # c.sell        
 
-class square:
-    def __init__(self,side):
-        self.side=side
+# class square:
+#     def __init__(self,side):
+#         self.side=side
         
-    def area(self):
-        print('the area of square is ', self.side **2)
+#     def area(self):
+#         print('the area of square is ', self.side **2)
         
-class circle:
-    def __init__(self,radius):
-        self.radius=radius
+# class circle:
+#     def __init__(self,radius):
+#         self.radius=radius
         
-    def area(self):
-        print('The area of a circle is', self.radius**2)  
+#     def area(self):
+#         print('The area of a circle is', self.radius**2)  
         
-Square= square(50)   
-Circle= circle(30)     
-# Square.area()
-# Circle.area() 
+# Square= square(50)   
+# Circle= circle(30)     
+# # Square.area()
+# # Circle.area() 
 
-for shape in(Square,Circle):
-    shape.area()
+# for shape in(Square,Circle):
+#     shape.area()
     
     
 
 
-from abc import ABC, abstractmethod
-class Animal(ABC):
-    def move(self):
-        print('This is the parent class of animals') 
+# from abc import ABC, abstractmethod
+# class Animal(ABC):
+#     def move(self):
+#         print('This is the parent class of animals') 
         
         
-class human(Animal):
-    def move(self):
-        print('I can talk and walk on two legs')     
+# class human(Animal):
+#     def move(self):
+#         print('I can talk and walk on two legs')     
 
 
-class snake(Animal):
-    def move():
-        print('I can slither')
+# class snake(Animal):
+#     def move():
+#         print('I can slither')
         
         
-r= human()
-r.move()        
+# r= human()
+# r.move()        
 
               
             
         
+class   Flashcard:
+    def __init__(self,word,meaning):
+        self.word=word
+        self.meaning=meaning
+    def __str__(self):
+             return self.word  + ' ('+ self.meaning +') '
+   
+flash=[]
+print('Welcome to the flash app')
+while (True):
+    word=input('Enter the name you want to add on the flash card ')
+    meaning=input('Enter the meaning of the word')
+    flash.append(Flashcard(word,meaning))
+    option=int(input('Enter 0 , if you want to add another word and meaning to the flashcard other wiase enter 1: '))
+    if option:
+        break
+print('\n Your flashcards')
+for i in flash:
+    print('>' , i)
+    
         
