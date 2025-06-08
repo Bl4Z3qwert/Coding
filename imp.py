@@ -1,0 +1,12 @@
+
+
+import pygame
+pygame.init()
+screen=pygame.display.set_mode((40,50))
+done=False
+while not done:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            pygame.QUIT()
+    pygame.display.flip()
+    
