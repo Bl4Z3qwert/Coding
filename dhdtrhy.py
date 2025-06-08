@@ -74,24 +74,29 @@
               
             
         
-class   Flashcard:
-    def __init__(self,word,meaning):
-        self.word=word
+class Romannumeral:
+    def __init__(self,letter,meaning):
+        self.letter=letter
         self.meaning=meaning
     def __str__(self):
-             return self.word  + ' ('+ self.meaning +') '
+             return self.letter  + ' ('+ self.meaning +') '
    
 flash=[]
-print('Welcome to the flash app')
+print('Welcome to the translator app')
 while (True):
-    word=input('Enter the name you want to add on the flash card ')
-    meaning=input('Enter the meaning of the word')
-    flash.append(Flashcard(word,meaning))
-    option=int(input('Enter 0 , if you want to add another word and meaning to the flashcard other wiase enter 1: '))
+    letter=input('Enter the for the roman numeral ')
+    meaning=input('Enter the meaning of the letter')
+    flash.append(Romannumeral(letter,meaning))
+    option=int(input('Enter 0 , if you want to add another letter and meaning otherwise enter 1: '))
     if option:
         break
-print('\n Your flashcards')
+    if input == letter == meaning:
+        print(letter=meaning)
+    else:
+        print('That is not in the database')    
+print('\n Your history')
 for i in flash:
     print('>' , i)
     
+      
         
