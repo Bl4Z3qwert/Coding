@@ -1,6 +1,8 @@
 import pygame
 import math
 import random
+pygame.mixer.init()
+pygame.init()
 WIDTH=800
 HEIGHT=600
 screen=pygame.display.set_mode((WIDTH,HEIGHT))
@@ -77,10 +79,16 @@ while run:
            bullet_state='ready'
            
    if bullet_state=='fire' and is_collision(enemy_x,enemy_move_y,bullet_x,bullet_y):
-       bullet_state='ready'
-       enemy_x=random.randint(0,736)  
-       enemy_y=50
+        sound_effect = pygame.mixer.Sound("sound_effect.wav")
+        sound_effect.play()
+        input("Press Enter to exit...")
+        bullet_state='ready'
+        enemy_x=random.randint(0,736)  
+        enemy_y=50
+       
        
    screen.blit(player,(player_x,player_y))        
    screen.blit(enemy,(enemy_x,enemy_y))
    pygame.display.update()         
+
+
