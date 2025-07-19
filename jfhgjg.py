@@ -7,7 +7,9 @@ def topwin():
   top.geometry('100x100')
   top.title('toplevel')
   l2=Label(top,text='The top level window')
+  l4=Entry(top,text='the level name')
   l2.pack()
+  l4.pack()
   top.mainloop()
   
 l =Label(root,text= 'This is the root window')  
