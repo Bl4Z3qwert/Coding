@@ -42,5 +42,6 @@ class RestaurantOrderManagement:
                 frame,
                 text=f'{item} (${price}):'
                 font=('Arial',12)
+                
             )
             
