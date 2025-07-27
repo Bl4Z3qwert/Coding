@@ -34,5 +34,7 @@ df['Salary'].fillna(300, inplace=True)
 print("\nAfter filling nulls in Salary with 300:")
 print(df)
 
-df['Role'].fillna('CEO', inplace=T
+df['Role'].fillna('CEO', inplace=True)
+print("\nAfter filling nulls in Role with 'CEO':")
+print(df)
 
