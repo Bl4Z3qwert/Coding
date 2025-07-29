@@ -27,3 +27,13 @@ plt.xlabel('Sports data')
 plt.ylabel('Average pulse')
 plt.title('Line Graph')
 plt.show()
+xAxis=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+yAxis=[10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
+
+xAxis =[i+0.5 for i, i in enumerate(xAxis)]
+plt.bar(xAxis, yAxis)
+plt.title('Bar Chart')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.xticks([i +0.5 for i, i in enumerate(xAxis)], xAxis)
+plt.show()
