@@ -1,30 +1,15 @@
-class BMW:
-    def fuel_type(self):
-        return "BMW uses petrol"
+import math
 
-    def max_speed(self):
-        return "BMW's max speed is 250 km/h"
+def trig_values(angle):
+    radians = math.radians(angle)
+    return {
+        "sin": round(math.sin(radians), 2),
+        "cos": round(math.cos(radians), 2),
+        "tan": round(math.tan(radians), 2)
+    }
 
-class Ferrari:
-    def fuel_type(self):
-        return "Ferrari uses high-octane petrol"
-
-    def max_speed(self):
-        return "Ferrari's max speed is 330 km/h"
-
-class Tesla:
-    def fuel_type(self):
-        return "Tesla uses electricity"
-
-    def max_speed(self):
-        return "Tesla's max speed is 220 km/h"
-
-# Polymorphism in action
-def vehicle_details(vehicle):
-    print(vehicle.fuel_type())
-    print(vehicle.max_speed())
-    print("--------")
-
-# Testing all vehicles
-for car in [BMW(), Ferrari(), Tesla()]:
-    vehicle_details(car)
+angle = float(input("Enter angle in degrees: "))
+values = trig_values(angle)
+print("sin:", values["sin"])
+print("cos:", values["cos"])
+print("tan:", values["tan"])

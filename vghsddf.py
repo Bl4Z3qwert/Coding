@@ -7,3 +7,4 @@ def shutdown(mode):
         return "Please enter 'yes' or 'no'."
 
 print(shutdown("yes"))
+print('thank_you')
