@@ -1,43 +1,42 @@
 import pandas as pd
-
+import seaborn as sns
 import matplotlib.pyplot as plt
 
-# URL for the Google Sheets CSV export
+# Load the dataset
+url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv"
+df = pd.read_csv(url)
 
-url = "https://docs.google.com/spreadsheets/d/19DuqMX-N6nDUnLMsYn_1EojQJhIfdZT98NJfWZTR9nA/export?format=csv&id=19DuqMX-N6nDUnLMsYn_1EojQJhIfdZT98NJfWZTR9nA&gid=1362010949"
-
-weather = pd.read_csv(url)
-print(weather.head())
-weather['date_time'] = pd.to_datetime(weather['date_time'], format='%d-%m-%Y %H:%M')
-plt.figure(figsize=(10, 5))
-plt.plot(weather['date_time'], weather['temperature'], label='Temperature', color='tab:blue')
-plt.xlabel('Date and Time')
-plt.ylabel('Temperature (°C)')
-plt.title('Temperature Over Time')
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.legend()
+# Barplot: Species vs SepalLengthCm
+sns.barplot(x='species', y='sepal_length', data=df)
+plt.title("Barplot: Species vs Sepal Length")
 plt.show()
 
-
-
-
-
-plt.figure(figsize=(8, 6))
-plt.scatter(weather['date_time'], weather['humidity'], c='tab:blue', label='Humidity', alpha=0.5)
-plt.xlabel('Date and Time')
-plt.ylabel('Humidity (%)')
-plt.title('Humidity Over Time')
-plt.xticks(rotation=45)
-plt.tight_layout()
-plt.legend()
+# Countplot: Count of different species
+sns.countplot(x='species', data=df)
+plt.title("Countplot: Species Count")
 plt.show()
 
+# Boxplot: Species vs SepalWidthCm
+sns.boxplot(x='species', y='sepal_width', data=df)
+plt.title("Boxplot: Species vs Sepal Width")
+plt.show()
 
-plt.figure(figsize=(8, 6))
-plt.scatter(weather['temperature'], weather['humidity'], c='tab:green', alpha=0.5)
-plt.xlabel('Temperature (°C)')
-plt.ylabel('Humidity (%)')
-plt.title('Temperature vs Humidity')
-plt.tight_layout()
+# Swarmplot: Species vs SepalWidthCm
+sns.swarmplot(x='species', y='sepal_width', data=df)
+plt.title("Swarmplot: Species vs Sepal Width")
+plt.show()
+
+# Distplot: Distribution of SepalWidthCm
+sns.histplot(df['sepal_width'], kde=True)
+plt.title("Distribution of Sepal Width")
+plt.show()
+
+# Jointplot: SepalWidthCm vs SepalLengthCm
+sns.jointplot(x='sepal_width', y='sepal_length', data=df, kind='scatter')
+plt.suptitle("Jointplot: Sepal Width vs Sepal Length", y=1.02)
+plt.show()
+
+# Pairplot: All features with species as hue
+sns.pairplot(df, hue='species')
+plt.suptitle("Pairplot of All Features", y=1.02)
 plt.show()
